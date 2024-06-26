@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- weather app  -->
+    
+    <div class="weatherapp">
+    
+            <div class="weathercard">
+                    
+                <h1 class="wel-heading">Weather APP!</h1> 
+             
+                <h1 class="heading2">Know The Weather Of Any City...</h1>
+                <div class="start">
+                    <img src="./images/cloud.gif" alt="imaege" height="80vh" width="50%" class="sunimg" >
+                    <!-- <video src="./video/weather video.mp4" height="150px" width="250px" autoplay loop></video> -->
+                    <button class="startbtn" onclick="startwin()"> Get Start...</button>
+                </div>
+        
+            </div>
+        </div>
+        
+      
+
+        <!-- start the app -->
+    <div class="wrapper">
+       
+        <div class="weather-wrapper">
+            <div class="gotostart"><img src="./images/back2.png" alt="image" height="35px" width="35px" onclick="goback2()" class="icon">
+            </div>
+           
+            <h1>Weather App</h1>
+          
+            <!-- searchform-->
+        
+            <form class="search-weather searchform">
+               
+                <div class="datasearch">
+                <input placeholder="Search for City..." class="data-searchInput" >
+                <button class="btn" type="submit" onclick="loading()">
+                    <img src="./images/search.png"  width="20" height="20" loading="lazy">
+                </button>
+            </div>
+                <div class="searchvideo">
+                    <video src="./gif/searchvideo2.mp4" height="180px" width="100%" autoplay loop></video>
+    
+                </div>
+
+                  <!--- loading screen container -->
+            <div class="sub-container loading-container">
+
+                <img src="./images/loading.gif" width="150" height="150">
+                <p>Loading</p>
+            </div>
+          
+                <div class="or">
+                <div class="ordiv"></div>
+                    <p>OR</p>
+                    <div class="ordiv"></div>
+                </div>
+
+                <!-- user weather container -->
+                <div class="sub-container your-weather ">
+                    <img src="./images/locationicon.gif" width="80" height="80" loading="lazy">
+                    <p id="location-para-1">Use Current Location</p>
+                <p id="location-para-2">Turn on location to get weather Information</p>
+                <button class="btn2 uselocation">Use Location</button>
+            </div>
+
+            
+            <div class="sub-container loading-container2">
+                <video src="./gif/loadinggiff.mp4" height="150px" width="150%" autoplay loop></video>
+            </div>
+        </form>
+            
+        </div>
+
+        
+           <!-- show weather info -->
+           <div class="showweather">
+    
+          <div class="icondiv"><img src="./images/back2.png" alt="image" height="40px" width="40px" onclick="goback()" class="icon">
+            <img src="./images/threedot.webp" alt="image" height="40px" width="40px" onclick="setting()" class="icon">  
+        </div>
+
+            <form class="search2 searchform2">
+                <input placeholder="Search for City..." class="data-searchInput2" >
+                <button class="btn" type="submit">
+                    <img src="./images/search.png"  width="20" height="20" loading="lazy">
+                </button>
+            </form>
+
+          <!--weather information  -->
+           <div class="sub-container weather-information">
+        
+            <!--city name and Country Flag-->
+
+            <div class="name">
+                <p class="cityName"></p>
+                <img class="country-icon">
+            </div>
+
+            <!-- weather description-->
+            <div class="desc-icon">
+            <p class="weather-desc"></p>
+            <!--weather Icon-->
+            <img  class="weather-icon"> </div>
+
+            <!--temperature-->
+            <p class="citytemp"></p>
+
+            <!-- weathergif -->
+           <div class="weathergif"><video class="weather-gif" height="150px" width="250px"  autoplay loop></video>  </div> 
+
+              <!-- otherinformation -->
+
+            <div class="other-information">
+
+                <!--card 1-->
+                <div class="otherinfo">
+                    <img src="./images/windspeed.png" >
+                    <p class="otherinfodesc">Windspeed</p>
+                    <p class="windspeed otherinfovalue"></p>
+                </div>
+
+                <!--card 2-->
+                <div class="otherinfo">
+                    <img src="./images/humidity.png" >
+                    <p class="otherinfodesc">Humidity</p>
+                    <p class="humidity otherinfovalue" ></p>
+                </div>
+               
+                
+                 <!--card 3-->
+                 <div class="otherinfo">
+                    <img src="./images/airpressure.webp" >
+                    <p class="otherinfodesc">Air Pressure</p>
+                    <p class="pressure otherinfovalue"></p>
+                </div>
+
+                 <!--card 4-->
+                 <div class="otherinfo">
+                    <img src="./images/visibility.webp" >
+                    <p class="otherinfodesc">Visibility</p>
+                    <p class="visibility otherinfovalue"></p>
+                </div>
+
+        
+            </div>
+            </div>
+
+            <!-- error section -->
+            <div class="error">
+        
+                <h1>Sorry! Page not found</h1>
+                <video class="errorvideo" src="./gif/errorgif.mp4" height="200vh" width="400vw" autoplay loop>
+    
+                </video>
+            </div>
+    
+        </div>
+
+      
+        <!-- setting section -->
+             <div class="settingdiv">
+                <div class="icondiv"><img src="./images/back3.webp" alt="image" height="40px" width="40px" onclick="backtoweather()" class="icon"></div>
+             <h1> setting</h1>
+             <h3>Unit</h3>
+
+             <!-- unit section -->
+
+             <div class="unitdiv">
+                
+
+                   <div class="settingopt">
+                   <label for="tempid">  Temperature</label>
+                <select  class="setting"  id="tempid"> 
+                    <option value="Celsius" class="settingclass">Celsius</option>
+                    <option value="Fahrenheit" class="settingclass">Fahrenheit </option>
+                </select> </div>
+
+
+                <div  class="settingopt">
+                    <label for="windid">WindSpeed</label>
+                <select class="setting" id="windid">
+                    <option value="metrespersecond" class="settingclass" >Metres per second (m/s)</option>
+                    <option value="Kilometresperhour" class="settingclass" >Kilometres per hour (km/h)</option>
+                </select> </div>
+
+                <div class="settingopt">
+                    <label for="airid"> Air Pressure</label>
+                <select class="setting"  id="airid">
+                    <option value="hectopascal" class="settingclass">hectopascal</option>
+                    <option value="inchesofmercury" class="settingclass">  Inches of mercury(inHg)</option>
+                </select>  </div>
+
+               <div class="settingopt">
+                <label for="visibilityid">Visibility</label>
+                <select  class="setting " id="visibilityid" >
+                <option value="kilometres" class="settingclass">Kilometres(km)</option>
+                <option value="miles" class="settingclass">Miles(mi)</option>
+                </select> </div>
+            </div>
+
+             </div>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
